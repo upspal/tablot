@@ -13,7 +13,8 @@ we currently use <a href='https://pypi.org/project/terminaltables/'>terminaltabl
 we are working on this just for the sake of getting familiarized with <a href='https://discordpy.readthedocs.io/en/latest/'>discord.py</a>
 
 ### why tablot?
-"It's like one of those small things that makes your life 1% easier <3" ~ clash
+> It's like one of those small things that makes your life 1% easier <3
+> ~ clash
 
 ### requirements
 * requires python 
