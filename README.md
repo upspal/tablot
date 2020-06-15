@@ -12,11 +12,11 @@ we currently use <a href='https://pypi.org/project/terminaltables/'>terminaltabl
 
 we are working on this just for the sake of getting familiarized with <a href='https://discordpy.readthedocs.io/en/latest/'>discord.py</a>
 
-### why tablot?
+## why tablot?
 > It's like one of those small things that makes your life 1% easier <3
 > ~ clash
 
-### requirements
+## requirements
 * requires python 
 * requires python-dotenv 
 * requires terminaltables
@@ -24,7 +24,7 @@ we are working on this just for the sake of getting familiarized with <a href='h
 "hi rachit, pls create `requirements.txt` file" <br>
 "ok"
 
-### commands
+## commands
 
 #### about
 command: `$about`
@@ -38,7 +38,7 @@ action: pings bot, returns bot latency in `ms`
 command: `$stats`
 action: shows bot statistics and technical data
 
-### building from source
+## building from source
 Install everything written in "requirements" with pip install.
 (or wait for rachit to create `requirements.txt`)
 
