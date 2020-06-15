@@ -1,7 +1,7 @@
 <h1 align="center">Tablot</h1>
 
 <p align="center">
-  <a href="https://discord.gg/YRvmXT">
+  <a href="https://discord.gg/6mtRwdn">
     <img src="https://badgen.net/badge/discord/join%20chat/7289DA?icon=discord" alt="Discord Server" />
   </a>
 </p>
