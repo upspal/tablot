@@ -16,9 +16,9 @@ we are working on this just for the sake of getting familiarized with <a href='h
 "It's like one of those small things that makes your life 1% easier <3" ~ clash
 
 ### requirements
-requires python 
-requires python-dotenv 
-requires terminaltables
+* requires python 
+* requires python-dotenv 
+* requires terminaltables
 
 "hi rachit, pls create `requirements.txt` file" <br>
 "ok"
