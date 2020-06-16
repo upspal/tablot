@@ -14,14 +14,16 @@ scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/aut
 creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
 gClient = gspread.authorize(creds)
 
+client = commands.Bot(command_prefix = '&')
+
 @client.event
 async def on_ready():
-    print('i\'m ready to get back to work')
+    print('i\'m ready to get back to work letsgo')
 
 @client.event
 async def on_message(message):
 
-    if message.content.startswith(f'$ts show "'):
+    if message.content.startswith(f'&ts show "'):
         if message.content[-1] != '"':
             await message.channel.send('bhai naam toh dhang se likh le')
         else:
@@ -40,8 +42,11 @@ async def on_message(message):
             except:
                 await message.channel.send('pls junos dis is incorrect file name')
 
-client.run(TOKEN)
+@client.command()
+async def ping():#&ping
+  await client.say(f'Pong! {client.latency}')
 
+client.run('TOKEN') #isko hatana hai when push bc
 # web scraping - future?
 # email: mihir-462@tablot-280404.iam.gserviceaccount.com
 
