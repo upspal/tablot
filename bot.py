@@ -72,6 +72,22 @@ async def on_message(message):
         ).set_footer(text='Made by Tech Syndicate', icon_url='https://techsyndicate.co/img/logo.png')
         await message.channel.send(embed=embed)
 
+    if message.content.startswith(f'$ts stats'):
+        embed = discord.Embed(
+            title=f'Description',
+            description='',
+            colour=1499502,
+        ).add_field(
+            name='Guild Count',
+            value=len([s for s in client.guilds]),
+            inline=True
+        ).add_field(
+            name='Latency',
+            value=f'{round(client.latency * 1000, 2)}ms',
+            inline=True
+        ).set_footer(text='Made by Tech Syndicate', icon_url='https://techsyndicate.co/img/logo.png')
+        await message.channel.send(embed=embed)
+    
     if message.content.startswith("$ts help") :
         embed = discord.Embed(
         title="Tablot's commands:",
@@ -89,32 +105,6 @@ async def on_message(message):
 """)
         await message.channel.send(embed=embed)
 client.run(TOKEN)
-'''
-General Commands:
-$ts about -> introduction to bot
-$ts help -> list of commands
-$ts stats -> stats of bot
 
-Google Sheets Commands:
-$ts show "file name" -> displays the whole table
-$ts show "file name" value -> displays rows of specific value
-'''
 # web scraping - future?
 # email: mihir-462@tablot-280404.iam.gserviceaccount.com
-
-'''
-Commands: 
-1. $ts about - bot introduces itself ($hello --> $about)
-2. $ts ping - check the bot's latency (j)
-3. $ts github - display github repo (j)
-4. $ts stats - as the name suggests 
-4. ts show "file name"
-
-6. $ts sheet name rachit
-serial number: 1
-name: Rachit
-class: XI - C
-stream: science
-'''
-
-
