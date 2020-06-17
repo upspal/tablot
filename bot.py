@@ -26,17 +26,17 @@ async def on_message(message):
             description = {"These are all the commands for the bot"},
             color = 1499502,
         ).add_field(
-            name = "`$ts about`"  
-            value = "Tells about the about" 
-            inline = True
+            name = "`$ts about`",
+            value = "Tells about the about",
+            inline = True,
         ).add_field(
-            name = "`$ts ping`"
-            value = "Shows the latency of the server"
-            inline = True
+            name = "`$ts ping`",
+            value = "Shows the latency of the server",
+            inline = True,
         ).add_field(
-            name = "`$ts stats`"
-            value = "Displays the statistics of Github repository"
-            inline = True
+            name = "`$ts stats`",
+            value = "Displays the statistics of Github repository",
+            inline = True,
         )
         await message.channel.send(embed=embed)
     
