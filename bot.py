@@ -52,6 +52,22 @@ async def on_message(message):
         ).set_footer(text='Made by Tech Syndicate', icon_url='https://techsyndicate.co/img/logo.png')
         await message.channel.send(embed=embed)
 
+    if message.content.startswith(f'$ts stats'):
+        embed = discord.Embed(
+            title=f'Description',
+            description='',
+            colour=1499502,
+        ).add_field(
+            name='Guild Count',
+            value=len([s for s in client.guilds]),
+            inline=True
+        ).add_field(
+            name='Latency',
+            value=f'{round(client.latency * 1000, 2)}ms',
+            inline=True
+        ).set_footer(text='Made by Tech Syndicate', icon_url='https://techsyndicate.co/img/logo.png')
+        await message.channel.send(embed=embed)
+    
 client.run(TOKEN)
 
 # web scraping - future?
