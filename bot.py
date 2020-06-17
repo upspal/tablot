@@ -6,7 +6,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
+#TOKEN = os.getenv('DISCORD_TOKEN')
 client = discord.Client()
 
 # table data
@@ -52,7 +52,7 @@ async def on_message(message):
         ).set_footer(text='Made by Tech Syndicate', icon_url='https://techsyndicate.co/img/logo.png')
         await message.channel.send(embed=embed)
 
-client.run(TOKEN)
+client.run("NzIyMzQzMTc1MzEzOTQ4Njgy.XuhspQ.sfbLozxqI-3qEbNIJzg4-DQiJrA")
 
 # web scraping - future?
 # email: mihir-462@tablot-280404.iam.gserviceaccount.com
