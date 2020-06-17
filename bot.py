@@ -20,8 +20,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-
-    if message.content.startswith('$ts show "'):
+    if message.content.startswith('$ts show '):
         if message.content[-1] != '"':
             a = message.content.split('"')
             if len(a) < 3:
@@ -61,7 +60,8 @@ async def on_message(message):
                 await message.channel.send('Make sure the sheet name is correct. Also, if you haven\'t already, please share your google sheet with `mihir-462@tablot-280404.iam.gserviceaccount.com`.')
 
     if message.content.startswith('$ts about'):
-        embed = discord.Embed(title='Thanks for adding me to your server! :heart:', description='To get started, simply share your google sheet with me at `mihir-462@tablot-280404.iam.gserviceaccount.com`, and type `$ts help` for a list of commands.', colour=1499502).add_field(
+        embed = discord.Embed(title='Thanks for adding me to your server! :heart:', description='To get started, simply share your google sheet with me at `mihir-462@tablot-280404.iam.gserviceaccount.com`, and type `$ts help` for a list of commands', colour=1499502)\
+        .add_field(
             name='Tablot',
             value='Tablot helps you conveniently display your google sheets data on a discord server.',
             inline=False).add_field(
@@ -72,8 +72,33 @@ async def on_message(message):
         ).set_footer(text='Made by Tech Syndicate', icon_url='https://techsyndicate.co/img/logo.png')
         await message.channel.send(embed=embed)
 
-client.run(TOKEN)
+    if message.content.startswith("$ts help") :
+        embed = discord.Embed(
+        title="Tablot's commands:",
+        colour=1499502,
+        description="""
+> To use a  command type `$ts <command>`.
 
+**General**
+`about` - To know about the bot.
+`stats` - To check the bot's stats.
+
+**Google Sheets **
+`show "file name"` - To display the whole table
+`show "file name" value` - To display rows of specific value
+""")
+        await message.channel.send(embed=embed)
+client.run(TOKEN)
+'''
+General Commands:
+$ts about -> introduction to bot
+$ts help -> list of commands
+$ts stats -> stats of bot
+
+Google Sheets Commands:
+$ts show "file name" -> displays the whole table
+$ts show "file name" value -> displays rows of specific value
+'''
 # web scraping - future?
 # email: mihir-462@tablot-280404.iam.gserviceaccount.com
 
