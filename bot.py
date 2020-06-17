@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from terminaltables import AsciiTable
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from datetime import datetime
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -85,10 +86,10 @@ async def on_message(message):
             name='Latency',
             value=f'{round(client.latency * 1000, 2)}ms',
             inline=True
-        ).set_footer(text='Made by Tech Syndicate', icon_url='https://techsyndicate.co/img/logo.png')
+        ).add_field(name='User Count', value=len([s.members for s in client.guilds])).set_footer(text='Made by Tech Syndicate', icon_url='https://techsyndicate.co/img/logo.png')
         await message.channel.send(embed=embed)
     
-    if message.content.startswith("$ts help") :
+    if message.content.startswith("$ts help"):
         embed = discord.Embed(
         title="Tablot's commands:",
         colour=1499502,
@@ -102,7 +103,7 @@ async def on_message(message):
 **Google Sheets **
 `show "file name"` - To display the whole table
 `show "file name" value` - To display rows of specific value
-""")
+""").set_footer(text='Made by Tech Syndicate', icon_url='https://techsyndicate.co/img/logo.png')
         await message.channel.send(embed=embed)
 client.run(TOKEN)
 
