@@ -6,7 +6,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 load_dotenv()
-#TOKEN = os.getenv('DISCORD_TOKEN')
+TOKEN = os.getenv('DISCORD_TOKEN')
 client = discord.Client()
 
 # table data
@@ -20,8 +20,27 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    if message.content.startswith("$ts help"):
+        embed = discord.Embed(
+            title = {"List Of Commands "},
+            description = {"These are all the commands for the bot"},
+            color = 1499502,
+        ).add_field(
+            name = "`$ts about`"  
+            value = "Tells about the about" 
+            inline = True
+        ).add_field(
+            name = "`$ts ping`"
+            value = "Shows the latency of the server"
+            inline = True
+        ).add_field(
+            name = "`$ts stats`"
+            value = "Displays the statistics of Github repository"
+            inline = True
+        )
+        await message.channel.send(embed=embed)
     
-    if message.content.startswith('$ts show "'):
+    if message.content.startswith('$ts show '):
         if message.content[-1] != '"':
             await message.channel.send('bhai naam toh dhang se likh le')
         else:
@@ -52,7 +71,7 @@ async def on_message(message):
         ).set_footer(text='Made by Tech Syndicate', icon_url='https://techsyndicate.co/img/logo.png')
         await message.channel.send(embed=embed)
 
-client.run("NzIyMzQzMTc1MzEzOTQ4Njgy.XumyDQ.q-bIImYPmG46mgdKUXEQyNv7t84")
+client.run(TOKEN)
 
 # web scraping - future?
 # email: mihir-462@tablot-280404.iam.gserviceaccount.com
